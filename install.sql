@@ -31,7 +31,7 @@ INSERT INTO `profilemeta` ( `meta_id`,              `upload`, `uid`,            
                           (         8, '2022-02-01 12:00:00',  1024,           'total_articles', '5'                                            ), -- int
                           (         9, '2022-02-01 12:00:00',  1024,   'total_private_articles', '10'                                           ), -- int
                           (        10, '2022-02-01 12:00:00',  1024,                      'url', 'https://*/mezga'                              ), -- string
-                          (        11, '2022-02-01 12:00:00',  1024,                        'a', '50'                                           ), -- int
+                          (        11, '2022-02-01 12:00:00',  1024,                        'a', '60'                                           ), -- int
                           (        12, '2022-02-01 12:00:00',  1024,                        'b', NULL                                           ), -- int
                           (        13, '2022-02-01 12:00:00',  1024,                        'c', NULL                                           ), -- int
                           (        14, '2022-02-01 12:00:00',  1024,                        'd', NULL                                           ), -- int
@@ -41,3 +41,11 @@ INSERT INTO `profilemeta` ( `meta_id`,              `upload`, `uid`,            
 
 INSERT INTO `profilemeta` ( `meta_id`,              `upload`, `uid`,                 `meta_key`, `meta_value` ) VALUES
                           (        18, '2022-02-02 12:00:00',  1024,                'last_name', 'Mézga'      );
+
+-- Az a|b|c|d értékek csak egyszerre változhatnak. Ha csak például az a értéke változik, akkor a b|c|d is fel lesz töltve a korábbi adatokkal
+
+INSERT INTO `profilemeta` ( `meta_id`,              `upload`, `uid`, `meta_key`, `meta_value` ) VALUES 
+                          (        19, '2022-02-03 12:00:00',  1024,        'a', '50'         ),
+                          (        20, '2022-02-03 12:00:00',  1024,        'b', NULL         ),
+                          (        21, '2022-02-03 12:00:00',  1024,        'c', NULL         ),
+                          (        22, '2022-02-03 12:00:00',  1024,        'd', NULL         );
