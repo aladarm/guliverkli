@@ -13,7 +13,7 @@
 		'order_by'=> 'position',
 		'order'=> 'DESC',
 
-		'type_id'=> 1, // 1|2|3|4 lehet vagy 0. 0 esetén lásd a 73. sort
+		'type_id'=> 1, // 1|2|3|4 lehet vagy 0. 0 esetén lásd a 75. sort
 
 		'max_rows'=> 25, // egy oldalon maximum ennyi sor
 		'page'=> 1, // hanyadik oldalt kérdezzük le
