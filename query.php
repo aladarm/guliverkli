@@ -3,6 +3,7 @@
 // <mysqli_connect>
 
 	$mysqli = mysqli_connect( "localhost", "my_user", "my_password", "my_db" );
+	mysqli_set_charset( $mysqli, 'utf8mb4' );
 
 // </mysqli_connect>
 
@@ -13,30 +14,30 @@
 		'order_by'=> 'position',
 		'order'=> 'DESC',
 
-		'type_id'=> 1, // 1|2|3|4 lehet vagy 0. 0 esetén lásd a 75. sort
+		'type_id'=> 1, // 1|2|3|4 lehet vagy 0. 0 esetén lásd a 76. sort
 
 		'max_rows'=> 25, // egy oldalon maximum ennyi sor
 		'page'=> 1, // hanyadik oldalt kérdezzük le
 
 		// <like>		
 
-			'last_name',
-			'tags',
-			'score',
-			'location',
-			'date',
-			'position',
-			'total_articles',
-			'total_private_articles',
-			'prev_a',
-			'fa',     // a
-			'prev_b',
-			'fb',     // b
-			'prev_c',
-			'fc',     // c
-			'prev_d',
-			'fd',     // d
-			'username'
+			'last_name'=> 'Mézga',
+			'tags'=> NULL,
+			'score'=> NULL,
+			'location'=> NULL,
+			'date'=> NULL,
+			'position'=> NULL,
+			'total_articles'=> NULL,
+			'total_private_articles'=> NULL,
+			'prev_a'=> NULL,
+			'fa'=> NULL,      // fa-> a
+			'prev_b'=> NULL,
+			'fb'=> NULL,      // fb-> b
+			'prev_c'=> NULL,
+			'fc'=> NULL,      // fc-> c
+			'prev_d'=> NULL,
+			'fd'=> NULL,      // fd-> d
+			'username'=> NULL 
 
 		// </like>
 
