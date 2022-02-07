@@ -34,4 +34,13 @@ SELECT `p2`.* FROM (
 			(SELECT `meta_value` FROM `profilemeta` WHERE `meta_key`='date'    AND `uid`=`p`.`uid` ORDER BY `upload` DESC LIMIT 1) AS `date`,
 			(SELECT `meta_value` FROM `profilemeta` WHERE `meta_key`='type_id' AND `uid`=`p`.`uid` ORDER BY `upload` DESC LIMIT 1) AS `type_id`
 		FROM `profiles` AS `p`
-	) `p2` WHERE ( `prev_a_date` IS NOT NULL OR `prev_b_date` IS NOT NULL OR `prev_c_date` IS NOT NULL OR `prev_d_date` IS NOT NULL ) AND ( `a` < `prev_a` OR `b` < `prev_b` OR `c` < `prev_c` OR `d` < `prev_d` OR ( `a` IS NULL AND `prev_a` IS NOT NULL ) OR ( `b` IS NULL AND `prev_b` IS NOT NULL ) OR ( `c` IS NULL AND `prev_c` IS NOT NULL ) OR ( `d` IS NULL AND `prev_d` IS NOT NULL ) ) AND `p2`.`last_name` LIKE '%Mézga%' ORDER BY `p2`.`position` ASC
+	) `p2` WHERE
+
+-- <type_id=0>
+
+		( `prev_a_date` IS NOT NULL OR `prev_b_date` IS NOT NULL OR `prev_c_date` IS NOT NULL OR `prev_d_date` IS NOT NULL )
+		AND ( `a` < `prev_a` OR `b` < `prev_b` OR `c` < `prev_c` OR `d` < `prev_d` OR ( `a` IS NULL AND `prev_a` IS NOT NULL ) OR ( `b` IS NULL AND `prev_b` IS NOT NULL ) OR ( `c` IS NULL AND `prev_c` IS NOT NULL ) OR ( `d` IS NULL AND `prev_d` IS NOT NULL ) )
+
+-- </type_id=0>
+
+	AND `p2`.`last_name` LIKE '%Mézga%' ORDER BY `p2`.`position` ASC
