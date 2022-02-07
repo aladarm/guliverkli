@@ -1,3 +1,8 @@
+-- type_id=1
+-- type_id=2
+-- type_id=3
+-- type_id=4
+
 SELECT `p2`.* FROM (
 		SELECT `p`.*,
 			(SELECT `meta_value` FROM `profilemeta` WHERE `meta_key`='profile_photo_remote_url' AND `uid`=`p`.`uid` ORDER BY `upload` DESC LIMIT 1) AS `profile_photo_remote_url`,
@@ -32,4 +37,12 @@ SELECT `p2`.* FROM (
 			(SELECT `meta_value` FROM `profilemeta` WHERE `meta_key`='date'    AND `uid`=`p`.`uid` ORDER BY `upload` DESC LIMIT 1) AS `date`,
 			(SELECT `meta_value` FROM `profilemeta` WHERE `meta_key`='type_id' AND `uid`=`p`.`uid` ORDER BY `upload` DESC LIMIT 1) AS `type_id`
 		FROM `profiles` AS `p`
-	) `p2` WHERE `p2`.`type_id`='1' AND `p2`.`last_name` LIKE '%Mézga%' ORDER BY `p2`.`position` ASC
+	) `p2` WHERE
+
+-- <type_id=1>
+
+		`p2`.`type_id`='1'
+
+-- </type_id=1>
+
+	AND `p2`.`last_name` LIKE '%Mézga%' ORDER BY `p2`.`position` ASC
